@@ -1,0 +1,35 @@
+.ticon{
+    float: left;
+    height: 20px;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: 5px;
+    position: relative;
+    width: 20px
+}
+.ticon{ background:url(../img/weather_icon_b_66.png) no-repeat; background-size: 240px auto}
+.ttu1{background-position:-0px -0px;}
+.ttu2{background-position:-20px -0px;}
+.ttu3{background-position:-40px -0px;}
+.ttu4{background-position:-60px -0px;}
+.ttu5{background-position:-70px -0px;}
+.ttu6{background-position:-100px -0px;}
+.ttu7{background-position:-120px -0px;}
+.ttu8{background-position:-140px -0px;}
+.ttu9{background-position:-160px -0px;}
+.ttu10{background-position:-180px -0px;}
+.ttu11{background-position:-200px -0px;}
+.ttu12{background-position:-220px -0px;}
+
+.ttu13{background-position:0px -20px;}
+.ttu14{background-position:-20px -20px;}
+.ttu15{background-position:-40px -20px;}
+.ttu16{background-position:-60px -20px;}
+.ttu17{background-position:-80px -20px;}
+.ttu18{background-position:-100px -20px;}
+.ttu19{background-position:-120px -20px;}
+.ttu20{background-position:-140px -20px;}
+.ttu21{background-position:-160px -20px;}
+.ttu22{background-position:-180px -20px;}
+.ttu23{background-position:-200px -20px;}
+.ttu24{background-position:-220px -20px;}

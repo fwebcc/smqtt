@@ -1,0 +1,6 @@
+<div class="container">
+<h3>title</h3> 
+       <div class="container" id='ir_info'></div>  
+                 <div class="content_power">
+
+</div></div></div>

@@ -1,0 +1,123 @@
+
+<div id="user_info"></div> 
+       <div class="card"> 
+        <div class="card-header"> 
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_mqtt" onclick="get_mqtt()"><i class="fa fa-server" style="font-size:36px"></i></a> 
+
+        </div> 
+        <div id="demo_mqtt" class="collapse"> 
+         <div class="card-body"> 
+          <div id="smqtt"></div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="card-header"> 
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_conf" onclick="get_conf()"><i class="fa fa-cogs" style="font-size:36px"></i></a> 
+        </div> 
+        <div id="demo_conf" class="collapse"> 
+         <div class="card-body"> 
+          <p>此处配置完成后需要重启软件才能生效!</p>
+           <button type="submit" class="btn btn-warning btn-sm" onclick="auto_x_y_go()"><i class="fa fa-map-marker" style="font-size:36px"></i></button><div id="info_conf"></div> 
+          <hr /> 
+          <div id="w_conf"></div> 
+           
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="card-header"> 
+        
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_user" onclick="get_login()"><i class="fa fa-user-circle-o" style="font-size:36px"></i></a> 
+        </div> 
+        <div id="demo_user" class="collapse"> 
+         <div class="card-body"> 
+          <div id="w_user"> 
+           <div class="row"> 
+            <div class="col-3">
+             用户名
+            </div>
+            <div class="col-9">
+             <input type="text" id="X_user" value="" />
+            </div> 
+            <div class="col-3">
+             密码
+            </div>
+            <div class="col-9">
+             <input type="password" id="X_pass" value="" />
+            </div> 
+            <div class="col-3">
+             再次密码
+            </div>
+            <div class="col-9">
+             <input type="password" id="X_pass2" value="" />
+            </div> 
+           </div> 
+           <button type="submit" class="btn btn-info btn-sm" onclick="edit_user_go()">保存</button> 
+       <div class="row"> 
+            <div class="col-12">
+               <h4>免登录设备列表</h4>[浏览器编号:<x id="msnget"></x>]<hr/>
+               <div id="login_list"></div>
+            </div>
+     </div>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="card-header"> 
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_group" onclick="get_group()"><i class="fa fa-arrows-alt" style="font-size:36px"></i></a> 
+        </div> 
+        <div id="demo_group" class="collapse"> 
+         <div class="card-body"> 
+          <div id="group"></div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="card-header">
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_list" onclick="get_mode()"><i class="fa fa-snowflake-o" style="font-size:36px"></i></a>
+        </div> 
+        <div id="demo_list" class="collapse"> 
+         <div class="card-body"> 
+          <div id="Slist"></div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="card-header">
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_token" onclick="get_token(0,0)"><i class="fa fa-handshake-o" style="font-size:36px"></i></a>
+        </div> 
+        <div id="demo_token" class="collapse"> 
+         <div class="card-body"> 
+          <div id="Stoken"></div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="card-header">
+         <a href="javascript:void(0);"  data-toggle="collapse" data-target="#demo_bak"><i class="fa fa-cloud-download" style="font-size:36px"></i></a>
+        </div> 
+        <div id="demo_bak" class="collapse"> 
+         <div class="card-body"> 
+          <div class="row"> 
+           <div class="col-sm-6"> 
+            <ul class="list-group"> 
+             <li class="list-group-item"><a href="/API?mode=down&keywords=SETUP.json ">下载配置文件<i class="fa fa-angle-double-down" style="font-size:24px"></i></a></li> 
+             <li class="list-group-item"><input type="file" id="json_file" /> <button type="submit" class="btn btn-sm btn-primary " onclick="up_file('json')">提交</button><br />[上传SETUP.json备份文件] </li>
+            </ul> 
+           </div> 
+           <div class="col-sm-6"> 
+            <ul class="list-group"> 
+             <li class="list-group-item"><a href="/API?mode=down&keywords=data.db">下载数据库<i class="fa fa-angle-double-down" style="font-size:24px"></i></a></li> 
+             <li class="list-group-item"><input type="file" id="db_file" /> <button type="submit" class="btn btn-sm btn-primary " onclick="up_file('db')">提交</button><br />[上传data.db备份文件] </li> 
+            </ul> 
+           </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 

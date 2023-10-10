@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>SMQTT</title> 
+  <link rel="Shortcut Icon" href="../static/img/favicon.ico" type="image/x-icon" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.0, user-scalable=yes" /> 
+  <meta name="keywords" content="vip" /> 
+  <link rel="stylesheet" href="../static/css/jquery.mobile-1.4.5.min.css" />  
+  <link rel="stylesheet" href="../static/css/bootstrap.css" /> 
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="../static/css/ir.css" />  
+  <link rel="stylesheet" href="../static/css/warther.css" />  
+
+  <script type="text/javascript" src="../static/js/jquery-3.7.1.min.js"></script> 
+  <script src="../static/js/popper.min.js"></script> 
+  <script src="../static/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="../static/js/socket.io3.1.min.js"></script> 
+  <script src="../static/js/md5.js"></script> 
+  <script src="../static/js/jquery.qrcode.min.js"></script>
+  <script src="../static/js/highstock.js"></script>
+ </head>
+ <body> 
+  <!-- 模态框 --> 
+  <div class="modal" id="myModal" style="backdrop-filter: blur(10px);"> 
+   <div class="modal-dialog modal-lg"> 
+    <div class="modal-content"> 
+<div>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div> 
+     <div class="modal-body"> 
+      <div id="mpage"></div> 
+      <div id="history_list_page"></div> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+  <!-- 模态框 --> 
+  <div class="jumbotron text-center" style="padding:10px"> 
+   <h3><a href="javascript:void(0);" onclick ="location.reload()" class="text-dark">SMQTT演示版</a><a href="javascript:void(0);" onclick ="exit()"><i class="fa fa-sign-out" style="color:red"></i></a></h3> 
+   <o id="logoinfo"></o>  <o id="idname"></o>
+  </div> 
+  <div class="container">      
+     <div id="menu"></div></br>
+     <div id="page_list"></div>
+     <div id="page_cmd" style="display:none;">
+        <div class="form-group" style="float:left;display:flex;width:100%">
+         <input class="form-control"  type="text" placeholder="主题"  id="to_Publish">
+         <input class="form-control"  type="text" placeholder="命令"  id="to_cmd">
+         <button type="button" class="btn btn-info btn-sm" onclick="mqtt_Publish();"><i class="fa fa-arrow-circle-right"></i></button>
+       </div>
+       <div class="card">
+        <div id="DTinfo" style="width:100%;height:500px;overflow:auto;overflow-x:hidden;">
+           <ols></ols>
+        </div> 
+       </div>
+  </div> 
+ <div class="container  text-center"> <hr>    
+       <p>使用帮助<a href="http://fweb.cc" target="_blank">http://fweb.cc</a>☀2012-2022  
+       <a href="https://jq.qq.com/?_wv=1027&k=7y7Bush6" target="_blank">FWEBCC智能家居</a>
+       <a href="admin" target="_blank"><i class="fa fa-gear"></i></a></div> 
+     </div>
+ </body>
+  <script src="../static/js/jquery-ui.min.js"></script>
+  <script src="../static/js/device.js"></script>  
+  <script src="../static/js/index.js"></script>
+  <script src="../static/js/devices_list.js"></script> 
+  <script src="../static/js/MQTT_connection.js"></script> 
+  <script src="../static/js/Browser_positioning.js"></script>
+</html>

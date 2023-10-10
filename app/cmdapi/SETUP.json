@@ -1,0 +1,168 @@
+{
+    "mqtt": {
+        "url": "fweb.cc",
+        "path": "/mqtt",
+        "port": "10001",
+        "user": "loog",
+        "pass": "110",
+        "tls": false,
+        "id": "web44334",
+        "topic": "#",
+        "mtport": "1883",
+        "qos": "2",
+        "cleansession": true,
+        "reconnectTimeout": "3000"
+    },
+    "key": {
+        "user": "21232f297a57a5a743894a0e4a801fc3",
+        "pass": "1a1dc91c907325c69271ddf0c944bc72",
+        "uuid": [
+            {
+                "RecordIP": "n",
+                "browser": "iPhone12mini",
+                "id": "c5b689387f1ca512a393935ecc351fbe",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "Mac_3F9E6F",
+                "id": "b7e81b71e0cbe34a0dc676e5ebf6cf10",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "iPhone_6/6S/7/8/SE2",
+                "id": "7a59fe1fc443a9dd0fd536b1f788f9c8",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "iPhone_X/XS/11Pro",
+                "id": "d1ca82211408d0ccb7792f6efc470957",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "Mac_F00028",
+                "id": "3090c9d10b108aa5554f1db28f14ca89",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "Win_2343AF",
+                "id": "adf4cf34cf6bd0566ee2454043ee850d",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "Mac_52WYM4",
+                "id": "1ae90e49abd026258176bc346bfb8eba",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "Win_HHDAG7",
+                "id": "6267907a1c4aeb5e490b8bdf1b1cc651",
+                "topic": "loog"
+            }
+        ]
+    },
+    "tmall_types": [
+        "light",
+        "switch",
+        "outlet",
+        "fan",
+        "camera",
+        "STB"
+    ],
+    "conf": {
+        "BaiduAK": {
+            "v": "8c3843795fdbf5781a3629ac37d7418c",
+            "t": "\u767e\u5ea6\u5730\u56feAK"
+        },
+        "ETC": {
+            "v": "Asia/Shanghai",
+            "t": "\u65f6\u533a"
+        },
+        "Every": {
+            "v": "8",
+            "t": "\u6bcf\u9875\u663e\u793a\u6761"
+        },
+        "city": {
+            "v": "Huangpu",
+            "t": "\u57ce\u5e02"
+        },
+        "country": {
+            "v": "China",
+            "t": "\u56fd\u5bb6"
+        },
+        "debug": {
+            "v": "y",
+            "t": "\u8c03\u8bd5\u6a21\u5f0f"
+        },
+        "email": {
+            "v": "1228822@qq.com",
+            "t": "\u8ba2\u9605\u90ae\u7bb1"
+        },
+        "email_Title": {
+            "v": "SMQTT\u8bbe\u5907\u901a\u77e5",
+            "t": "\u90ae\u4ef6\u4e3b\u9898"
+        },
+        "from_email": {
+            "v": "1228822@qq.com",
+            "t": "\u53d1\u4ef6\u4eba\u90ae\u7bb1"
+        },
+        "from_smtp": {
+            "v": "smtp.qq.com",
+            "t": "SMTP\u670d\u52a1\u5668"
+        },
+        "from_toke": {
+            "v": "999999",
+            "t": "\u53d1\u4ef6\u7bb1TOKE"
+        },
+        "homekit": {
+            "v": "n",
+            "t": "homekit"
+        },
+        "homekit_port": {
+            "v": "51826",
+            "t": "homekit\u7aef\u53e3"
+        },
+        "https": {
+            "v": "n",
+            "t": "HTTPS\u6a21\u5f0f"
+        },
+        "https_crt": {
+            "v": "h.fweb.cc_chain.crt",
+            "t": "https_crt"
+        },
+        "https_key": {
+            "v": "h.fweb.cc_key.key",
+            "t": "https_key"
+        },
+        "latitude": {
+            "v": "31.14969161538647",
+            "t": "\u7eac\u5ea6"
+        },
+        "longitude": {
+            "v": "121.45032058138733",
+            "t": "\u7ecf\u5ea6"
+        },
+        "pass": {
+            "v": "625c429e9519f02d0c3f5b7dda887034",
+            "t": "\u8ba2\u9605\u5bc6\u7801"
+        },
+        "port": {
+            "v": "8123",
+            "t": "WEB\u7aef\u53e3"
+        },
+        "send_email": {
+            "v": "20720879@qq.com",
+            "t": "\u6536\u4ef6\u4eba\u90ae\u7bb1"
+        },
+        "server": {
+            "v": "http://fweb.cc",
+            "t": "\u670d\u52a1\u5668\u5730\u5740"
+        }
+    }
+}

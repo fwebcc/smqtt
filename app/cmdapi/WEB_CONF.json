@@ -1,0 +1,276 @@
+{
+	"menu": [{
+			"mode": "home",
+			"ioc": "<i class='fa fa-dashboard'></i>",
+			"onclick": "plist",
+			"js": "devices_list.js",
+			"title": "控制面板"
+		},
+		{
+			"mode": "time",
+			"ioc": "<i class='fa fa-clock-o'></i>",
+			"onclick": "times_list",
+			"js": "time_task.js",
+			"title": "定时功能"
+		},
+		{
+			"mode": "auto",
+			"ioc": "<i class='fa fa-street-view'></i>",
+			"onclick": "auto_list",
+			"js": "auto_task.js",
+			"title": "自动化"
+		}, {
+			"mode": "cmd",
+			"ioc": "<i class='fa fa-terminal'></i>",
+			"onclick": "",
+			"js": "",
+			"title": "命令"
+		},
+		{
+			"mode": "config",
+			"ioc": "<i class='fa fa-cog'></i>",
+			"onclick": "config_get",
+			"js": "config_task.js",
+			"title": "配置"
+		},
+
+		{
+			"mode": "history",
+			"ioc": "<i class='fa fa-history'></i>",
+			"onclick": "history",
+			"js": "history.js",
+			"title": "历史"
+		},
+		{
+			"mode": "map",
+			"ioc": "<i class='fa fa-map-marker'></i>",
+			"onclick": "map_get",
+			"js": "map.js",
+			"title": "地图"
+		},
+
+		{
+			"mode": "about",
+			"ioc": "<i class='fa fa-user-circle-o'></i>",
+			"onclick": "about_get",
+			"js": "about.js",
+			"title": "关于"
+		}
+	],
+
+	"timemode": [{
+			"mode": "interval",
+			"title": "循环"
+		},
+		{
+			"mode": "sun",
+			"title": "日出日落"
+		},
+		{
+			"mode": "cron",
+			"title": "定时"
+		}
+	],
+	"automode": [{
+			"mode": "times",
+			"title": "时间",
+			"val": [{
+				"mod": "r",
+				"title": "范围",
+				"val": "17:00-21:00",
+				"unt": "[小时]"
+
+			}, {
+				"mod": "d",
+				"title": "延迟",
+				"val": "0",
+				"unt": "[秒]"
+			}]
+
+		},
+		{
+			"mode": "local",
+			"title": "定位",
+			"val": [{
+				"mod": "g",
+				"title": "范围外",
+				"val": "10",
+				"unt": "[米]"
+
+
+			}, {
+				"mod": "l",
+				"title": "范围内",
+				"val": "10",
+				"unt": "[米]"
+
+
+			}]
+		},
+		{
+			"mode": "vals",
+			"title": "值对比",
+			"val": [{
+				"mod": "g",
+				"title": "大于",
+				"val": "0",
+				"unt": "[数字]"
+
+
+			}, {
+				"mod": "l",
+				"title": "小于",
+				"val": "0",
+				"unt": "[数字]"
+
+
+			}, {
+				"mod": "e",
+				"title": "等于",
+				"val": "0",
+				"unt": "[数字]"
+
+			}]
+
+		}
+	],
+
+	"about": {
+		"<a href='/admin' target='_blank'><i class='fa fa-database' style='font-size:24px;'></i></a>": "<a href='/admin' target='_blank'>数据库管理</a>",
+		"<a href='http://fweb.cc/?m=doc&i=62&p=0' target='_blank'><i class='fa fa-book' style='font-size:24px;'></i></a>": "<a href='http://fweb.cc/?m=doc&i=62&p=0' target='_blank'>使用手册</a>"
+	},
+	"addir": {
+		"cmdon_home": "<i class='fa fa-repeat' style='font-size:24px;'></i>",
+		"cmdon_minus": "<i class='fa fa-minus' style='font-size:24px;'></i>",
+		"cmdon_Right": "<i class='fa fa-caret-right'style='font-size:24px;'></i>",
+		"cmdon_repeat": "<i class='fa fa-puzzle-piece' style='font-size:24px;'></i>",
+		"cmdon_Top": "<i class='fa fa-caret-up' style='font-size:24px;'></i>",
+		"cmdon_circle": "<i class='fa fa-check-circle' style='font-size:24px;'></i>",
+		"cmdon_Left": "<i class='fa fa-caret-left' style='font-size:24px;'></i>",
+		"cmdon_navicon": "<i class='fa fa-navicon' style='font-size:24px;'></i>",
+		"cmdon_plus": "<i class='fa fa-plus' style='font-size:24px;'></i>",
+		"cmdon_Bottom": "<i class='fa fa-caret-down' style='font-size:24px;'></i>"
+	},
+
+	"addinput": {
+		"Publish": "发送主题",
+		"key1": "JSON键值['demo']",
+		"stat": "状态",
+		"unit": "单位",
+		"Subscribe": "订阅主题",
+		"cmdoff": "命令[off]<i class='fa fa-home'></i>",
+		"JSON": "JSON数据",
+		"title": "名称[*]",
+		"email": "是否邮件通知",
+		"cmdon": "命令[on]<i class='fa fa-power-off'></i>",
+		"name": "英文名[*]",
+		"groups": "组别",
+		"mode": "类型",
+		"ip": "IP地址"
+	},
+
+	"type": [{
+			"title": "按钮",
+			"val": "switch",
+			"ioc": "fa-toggle-VALUE",
+			"data": "<o id='GEN_idx'><a href=\"javascript:void(0);\" onclick=Pstat('idx','mode','title','Publish','VALUE','serial','unit')><i class='fa fa-toggle-VALUE' style='font-size:28px'></i></a></o>",
+			"stat": "y"
+		},
+		{
+			"title": "拉条",
+			"val": "Dimmer",
+			"ioc": "",
+			"data": "<input type='range' id='L_idx' value='VALUE' min='0' max='100' onchange=Pstat('idx','mode','title','Publish','VALUE','serial','unit')>",
+			"stat": "y"
+		},
+
+		{
+			"title": "数值",
+			"val": "number",
+			"data": "<o id='idx'></o>",
+			"stat": "y"
+		},
+		{
+			"title": "网页",
+			"val": "iframe",
+			"ioc": "",
+			"data": "<iframe src='Publish'></iframe><br><a href='Publish' target='_blank'>Publish</a>",
+			"stat": "n"
+		}, {
+			"title": "监控",
+			"val": "camera",
+			"ioc": "fa-camera",
+			"data": "<button type='button' class='btn btn-primary btn-circle' data-toggle='modal' onclick=Popup('idx','mode','title','Publish','VALUE','serial','unit') data-target='#myModal'><i class='fa fa-camera'></i></button>",
+			"stat": "Publish"
+		},
+		{
+			"title": "遥控",
+			"val": "ir",
+			"data": "<button type='button' class='btn btn-primary btn-circle' data-toggle='modal' onclick=Popup('idx','mode','title','Publish','VALUE','serial','unit') data-target='#myModal'><i class='fa fa-hand-pointer-o'></i></button>",
+			"stat": "n"
+
+		}, {
+			"title": "地图",
+			"val": "map",
+			"ioc": "fa-map-marker",
+			"data": "<button type='button' class='btn btn-primary btn-circle' data-toggle='modal' onclick=Popup('idx','mode','title','Publish','VALUE','serial','unit') data-target='#myModal'><i class='fa fa-map-marker'></i></button>",
+			"stat": "y"
+
+		}, {
+			"title": "天气",
+			"val": "warther",
+			"ioc": "fa-cloud",
+			"data": "<button type='button' class='btn btn-primary btn-circle' data-toggle='modal' onclick=Popup('idx','mode','title','Publish','VALUE','serial','unit') data-target='#myModal'><i class='fa fa-cloud'></i></button>",
+			"stat": "Publish"
+
+		}, {
+			"title": "卡片",
+			"val": "card",
+			"ioc": "fa-address-card-o",
+			"data": "<button type='button' class='btn btn-primary btn-circle' data-toggle='modal' onclick=Popup('idx','mode','title','Publish','VALUE','serial','unit') data-target='#myModal'><i class='fa fa-address-card-o'></i></button>",
+			"stat": "Publish"
+		}
+	],
+	"type_ADD": {
+		"switch": [{
+			"title": "灯",
+			"val": "light"
+		}, {
+			"title": "锁",
+			"val": "lock"
+		}, {
+			"title": "开关",
+			"val": "switch"
+		}],
+		"camera": [{
+			"title": "监控",
+			"val": "camera"
+		}],
+		"ir": [{
+			"title": "遥控",
+			"val": "ir"
+		}],		
+                            "iframe": [{
+			"title": "网页",
+			"val": "iframe"
+		}],                           
+                            "warther": [{
+			"title": "天气",
+			"val": "warther"
+		}],
+		"number": [{
+			"title": "传感器",
+			"val": "sensor"
+		}],
+		"map": [{
+			"title": "地图",
+			"val": "map"
+		}],
+		"card": [{
+			"title": "卡片",
+			"val": "card"
+		}]
+
+
+	}
+}

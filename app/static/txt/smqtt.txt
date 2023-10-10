@@ -1,0 +1,102 @@
+<p class="text-danger">保存设置后请重启软件,设置才会生效!</p><hr>	         <div class="row">
+             <div class="col-sm-3">
+			    地址
+			 
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text" id="url">
+			 </div>
+             <div class="col-sm-3">
+			    路径
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text" id="path" value="/mqtt">
+			 </div> 
+        </div><hr>
+		
+		 <div class="row">
+             <div class="col-sm-3">
+			    websocket端口
+			 
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text"  id="port">
+			 </div>
+			 <div class="col-sm-3">
+			    MQTT端口
+			 
+			 </div>
+			 <div class="col-sm-3">
+			    <input type="text"  id="mtport">
+			 </div> 
+
+        </div><hr>
+		
+		 <div class="row">
+             <div class="col-sm-3">
+			    用户名
+			 
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text" id="muser" value="">
+			 </div>
+             <div class="col-sm-3">
+			    SSL/TLS开启
+			 </div>
+             <div class="col-sm-3">
+			    <input type="checkbox" value="" id="tls">
+			 </div> 
+        </div><hr>		
+		 <div class="row">
+             <div class="col-sm-3">
+			    密码
+			 
+			 </div>
+             <div class="col-sm-3">
+			    <input type="password" id="mpass">
+			 </div>
+             <div class="col-sm-3">
+			    客户端ID
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text" id="mid">
+			 </div> 
+        </div>	<hr>	  
+		 <div class="row">
+             <div class="col-sm-3">
+			    订阅主题
+			 
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text" id="mTopic" value="#" >
+			 </div>
+             <div class="col-sm-3">
+			    刷新间隔
+			 </div>
+             <div class="col-sm-3">
+			    <input type="text" id="reconnectTimeout">
+			 </div> 
+        </div>	<hr>	  
+		 <div class="row">
+             <div class="col-sm-3">
+			            缓存清理
+			           </div>
+             <div class="col-sm-3">
+			             <input type="checkbox" value="" id="cleansession">
+			          </div> 
+             <div class="col-sm-3">
+			               QOS
+			           </div>
+             <div class="col-sm-3">
+			             <input type="text" value="" id="qos">
+			          </div> 	  
+			   </div>	<hr>
+		 <div class="row">
+             <div class="col-sm-6">
+			    <button type="button" class="btn btn-success btn-sm" onclick="mqtt_save();">保存</button>
+			 </div> 
+             <div class="col-sm-6">
+			    <button type="button" class="btn btn-danger btn-sm" onclick="mqtt_restart();">重启</button>
+			 </div> 
+			 </div> 
+      
