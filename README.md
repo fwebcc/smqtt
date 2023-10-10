@@ -13,3 +13,11 @@ cd ./mqtt/app
 ./cmd start
 http://IP:8123
 默认用户名密码 admin pass
+
+
+使用python3.5 Html js ws编写，引用以下开源项目：
+https://github.com/ikalchev/HAP-python
+https://github.com/pallets/flask
+https://github.com/viniciuschiele/flask-apscheduler
+https://github.com/miguelgrinberg/Flask-SocketIO 
+https://github.com/eclipse/paho.mqtt.python
