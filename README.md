@@ -9,7 +9,7 @@ http://fweb.cc:8123
 
 安装debian或者ubuntu X86
 git clone https://github.com/fwebcc/smqtt.git
-cd ./mqtt/app
+cd /mqtt/app
 ./cmd start
 http://IP:8123
 默认用户名密码 admin pass
