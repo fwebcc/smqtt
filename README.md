@@ -14,7 +14,7 @@
 ---
 
 ## 🚀 演示信息 | Live Demo
-* **演示地址 (URL)**: [http://g.fweb.cc:8123](http://g.fweb.cc:8123)
+* **演示地址 (URL)**: [http://g.fweb.cc](http://g.fweb.cc)
 * **默认账号 (User)**: `admin`
 * **默认密码 (Pass)**: `pass`
 
