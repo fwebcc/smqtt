@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.0, user-scalable=yes" /> 
+  <title>SMQTT</title> 
+  <link rel="Shortcut Icon" href="../static/img/favicon.ico" type="image/x-icon" /> 
+  <link rel="stylesheet" href="../static/css/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="../static/css/bootstrap.css" /> 
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="../static/css/Dashboard.css">
+  <script type="text/javascript" src="../static/js/jquery-3.7.1.min.js"></script> 
+  <script src="../static/js/popper.min.js"></script> 
+  <script src="../static/js/bootstrap.min.js"></script> 
+  <script src="../static/js/socket.io.min.js"></script> 
+  <script src="../static/js/md5.js"></script> 
+  <script src="../static/js/jquery.qrcode.min.js"></script>
+  <script src="../static/js/jquery-ui.min.js"></script>
+  <script src="../static/js/hchart.js"></script>
+  <script src="../static/js/fingerprint.js"></script>
+ </head>
+ <body>  
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="box-shadow: 0 5px 15px rgba(0,0,0,0.2); border: none; position: relative; background: transparent;">
+            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" 
+                style="position: absolute; right: 15px; top: 10px; font-size: 32px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.5); opacity: 0.8; z-index: 1060; border: none; background: transparent; outline: none; line-height: 1;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="modal-body" style="padding: 0;">
+                <div id="mpage"></div>
+                <div id="history_list_page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal2" tabindex="-1" role="dialog" style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: none; position: relative; overflow: hidden; background: transparent;">
+            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" 
+                style="position: absolute; right: 15px; top: 10px; font-size: 32px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.5); opacity: 0.8; z-index: 1060; border: none; background: transparent; outline: none; line-height: 1;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="modal-body" style="padding: 0;">
+                <div id="mpage2"></div>
+                <div id="history_list_page2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron text-center" style="padding: 12px 15px; margin-bottom: 12px; background: #fff; border-bottom: 1px solid #edf2f9; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border-radius: 0 0 20px 20px;"> 
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 100%;">
+        
+        <div style="flex: 1; text-align: left; display: flex; align-items: center;">
+        </div>
+
+        <div style="flex: 2; text-align: center;">
+            <h3 style="margin: 0; padding: 0; line-height: 1;">
+                <a href="javascript:void(0);" onclick="location.reload()" style="text-decoration: none; color: #1e3c72; font-weight: 800; font-size: 20px; letter-spacing: 1px; font-family: 'Arial Black', Gadget, sans-serif;">
+                    SMQTT <i class="fa fa-refresh" style="font-size: 14px; color: #adc6ff; vertical-align: middle; margin-left: 2px;"></i>
+                </a>
+            </h3>
+        </div>
+
+        <div style="flex: 1; text-align: right;">
+            <a href="javascript:void(0);" onclick="exit()" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #fff1f0; border-radius: 8px; text-decoration: none;">
+                <i class="fa fa-sign-out" style="color: #ff4d4f; font-size: 16px;"></i>
+            </a>
+        </div>
+    </div>
+
+    <div style="margin-top: 8px; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 13px; color: #666;">
+        <span id="logoinfo" style="font-weight: 600; color: #1e3c72;"></span>
+        <span style="color: #eee;">|</span>
+        <span id="idname" style="color: #2a5298;"></span>
+        <div id="logoinfo2" style="display: inline-block; color: #999; font-size: 11px;"></div>
+    </div>
+</div>
+
+<div class="container" style="min-height: 100vh; font-family: sans-serif;">      
+    <div id="menu"></div>
+    
+    <div id="page_list">
+        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw loading-colorful" style="font-size:24px;"></i><span class="sr-only">Loading...</span> 
+        <div style="font-size: 12px; margin-top: 8px;">数据加载中...</div>
+    </div>
+
+    <div id="page_cmd" style="display:none;">
+        <div style="background: #fff; border-radius: 18px; padding: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 20px; border: 1px solid #edf2f9;">
+            <div style="font-size: 13px; font-weight: bold; color: #1e3c72; margin-bottom: 12px; display: flex; align-items: center;">
+                <span style="width: 4px; height: 14px; background: #1e3c72; border-radius: 2px; margin-right: 8px;"></span>
+                快捷指令控制台
+            </div>
+            
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <div style="flex: 1;">
+                    <input class="form-control" type="text" placeholder="主题" id="to_Publish" 
+                           style="border-radius: 10px; border: 1px solid #e0e6ed; height: 45px; font-size: 14px; box-shadow: none;">
+                </div>
+                <div style="flex: 1.5;">
+                    <input class="form-control" type="text" placeholder="输入控制命令" id="to_cmd" 
+                           style="border-radius: 10px; border: 1px solid #e0e6ed; height: 45px; font-size: 14px; box-shadow: none;">
+                </div>
+                <button type="button" class="btn btn-info" onclick="mqtt_Publish();" 
+                        style="width: 50px; height: 45px; border-radius: 12px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border: none; box-shadow: 0 4px 10px rgba(30,60,114,0.3);">
+                    <i class="fa fa-paper-plane" style="font-size: 18px; color: #fff;"></i>
+                </button>
+            </div>
+        </div>
+
+              
+            <div class="p-2" id="DTinfo" style="width:100%; height:550px; overflow-y:auto; box-shadow: 0 10px 30px rgba(0,0,0,0.04);scroll-behavior: smooth;">
+                <ols></ols>
+            </div> 
+
+    </div>  
+</div>
+
+ <div class="container  text-center"> <hr>    
+       <p>使用帮助<a href="http://fweb.cc" target="_blank">http://fweb.cc FWEBCC智能家居 ☀2012-2026 </a> 
+        <!-- <a href="https://jq.qq.com/?_wv=1027&k=7y7Bush6" target="_blank">FWEBCC智能家居</a>--> 
+       <a href="admin" target="_blank"><i class="fa fa-gear"></i></a></div> 
+     </div>
+ </body>
+  <script src="../static/js/device.js"></script> 
+  <script src="../static/js/index.js"></script>
+  <script src="../static/js/MQTT_connection.js"></script> 
+  <script src="../static/js/Browser_positioning.js"></script>
+</html>

@@ -1,0 +1,51 @@
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 8.4.0 (OpenWrt GCC 8.4.0 r2776-4206bd54)
+  configuration: --enable-cross-compile --cross-prefix=arm-openwrt-linux-gnueabi- --arch=arm --cpu=cortex-a9 --target-os=linux --prefix=/opt --pkg-config=pkg-config --enable-shared --enable-static --enable-pthreads --enable-zlib --disable-doc --disable-debug --disable-lzma --disable-vaapi --disable-vdpau --disable-outdevs --disable-altivec --disable-vsx --disable-power8 --disable-armv5te --disable-armv6 --disable-armv6t2 --disable-fast-unaligned --disable-runtime-cpudetect --enable-lto --disable-vfp --disable-neon --disable-x86asm --enable-gnutls --enable-libopus --enable-libv4l2 --enable-small --enable-libshine --enable-gpl --enable-libx264
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, rtsp, from 'rtsp://admin:si000000@192.168.2.9:554/stream2':
+  Metadata:
+    title           : Session streamed by "TP-LINK RTSP Server"
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: h264, yuv420p(progressive), 704x576, 15 fps, 27.75 tbr, 90k tbn
+  Stream #0:1: Audio: pcm_alaw, 8000 Hz, mono, s16, 64 kb/s
+Multiple -c, -codec, -acodec, -vcodec, -scodec or -dcodec options specified for stream 1, only the last option '-c:a mp3' will be used.
+Stream mapping:
+  Stream #0:0 -> #0:0 (copy)
+  Stream #0:1 -> #0:1 (pcm_alaw (native) -> mp3 (libshine))
+Press [q] to stop, [?] for help
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53_000.ts' for writing
+Output #0, stream_segment,ssegment, to '/tmp/mnt/fwebcc/home/smqtt/live/live_53_%03d.ts':
+  Metadata:
+    title           : Session streamed by "TP-LINK RTSP Server"
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, yuv420p(progressive), 704x576, q=2-31, 15 fps, 27.75 tbr, 90k tbn
+  Stream #0:1: Audio: mp3, 32000 Hz, mono, s16p, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 libshine
+size=N/A time=00:00:00.07 bitrate=N/A speed=7.2e+04x    [stream_segment,ssegment @ 0x5d09f0] Timestamps are unset in a packet for stream 0. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[stream_segment,ssegment @ 0x5d09f0] Non-monotonic DTS in output stream 0:0; previous: 0, current: 0; changing to 1. This may result in incorrect timestamps in the output file.
+[stream_segment,ssegment @ 0x5d09f0] Non-monotonic DTS in output stream 0:1; previous: 9720, current: 1440; changing to 9721. This may result in incorrect timestamps in the output file.
+[stream_segment,ssegment @ 0x5d09f0] Non-monotonic DTS in output stream 0:1; previous: 9721, current: 4680; changing to 9722. This may result in incorrect timestamps in the output file.
+[stream_segment,ssegment @ 0x5d09f0] Non-monotonic DTS in output stream 0:1; previous: 9722, current: 7920; changing to 9723. This may result in incorrect timestamps in the output file.
+size=N/A time=00:00:02.45 bitrate=N/A speed=4.76x    size=N/A time=00:00:03.00 bitrate=N/A speed=2.85x    size=N/A time=00:00:03.53 bitrate=N/A speed=2.25x    size=N/A time=00:00:04.04 bitrate=N/A speed=1.95x    [stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53.m3u8.tmp' for writing
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53_001.ts' for writing
+size=N/A time=00:00:04.55 bitrate=N/A speed=1.76x    size=N/A time=00:00:05.04 bitrate=N/A speed=1.63x    size=N/A time=00:00:05.56 bitrate=N/A speed=1.54x    size=N/A time=00:00:06.10 bitrate=N/A speed=1.46x    [stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53.m3u8.tmp' for writing
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53_002.ts' for writing
+size=N/A time=00:00:06.70 bitrate=N/A speed=1.41x    size=N/A time=00:00:07.25 bitrate=N/A speed=1.37x    size=N/A time=00:00:07.78 bitrate=N/A speed=1.33x    size=N/A time=00:00:08.29 bitrate=N/A speed=1.31x    size=N/A time=00:00:08.86 bitrate=N/A speed=1.29x    size=N/A time=00:00:09.41 bitrate=N/A speed=1.27x    size=N/A time=00:00:09.87 bitrate=N/A speed=1.25x    size=N/A time=00:00:10.38 bitrate=N/A speed=1.23x    [stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53.m3u8.tmp' for writing
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53_003.ts' for writing
+size=N/A time=00:00:10.96 bitrate=N/A speed=1.22x    size=N/A time=00:00:11.46 bitrate=N/A speed=1.21x    size=N/A time=00:00:11.96 bitrate=N/A speed= 1.2x    size=N/A time=00:00:12.47 bitrate=N/A speed=1.19x    [stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53.m3u8.tmp' for writing
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53_004.ts' for writing
+size=N/A time=00:00:13.01 bitrate=N/A speed=1.18x    size=N/A time=00:00:13.51 bitrate=N/A speed=1.17x    size=N/A time=00:00:14.01 bitrate=N/A speed=1.16x    size=N/A time=00:00:14.63 bitrate=N/A speed=1.15x    [stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53.m3u8.tmp' for writing
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53_005.ts' for writing
+size=N/A time=00:00:15.17 bitrate=N/A speed=1.15x    size=N/A time=00:00:15.64 bitrate=N/A speed=1.14x    size=N/A time=00:00:16.21 bitrate=N/A speed=1.14x    size=N/A time=00:00:16.72 bitrate=N/A speed=1.13x    size=N/A time=00:00:17.22 bitrate=N/A speed=1.13x    [in#0/rtsp @ 0x57a470] Error during demuxing: Connection timed out
+[in#0/rtsp @ 0x57a470] Error retrieving a packet from demuxer: Connection timed out
+[stream_segment,ssegment @ 0x5d09f0] Opening '/tmp/mnt/fwebcc/home/smqtt/live/live_53.m3u8.tmp' for writing
+[out#0/stream_segment,ssegment @ 0x5edf70] video:1063kB audio:276kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+size=N/A time=00:00:17.52 bitrate=N/A speed=1.11x    

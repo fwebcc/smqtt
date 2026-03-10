@@ -1,0 +1,122 @@
+<!--FWEB.CC 2018-2-24__20201020 EMAIL:1228822@QQ.COM SWEB10.0-->
+<!DOCTYPE html>
+  <html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FWEBCC</title>
+      <meta name="keywords" content="FWEB OS">
+      <link rel="shortcut icon" href="../static/img/favicon.ico"/>
+      <link rel="stylesheet" href="../static/css/bootstrap.css">
+      <link rel="stylesheet" href="../static/css/font-awesome.min.css"/> 
+
+  <script type="text/javascript" src="../static/js/jquery-3.7.1.min.js"></script> 
+      <script src="../static/js/md5.js"></script>   
+  </head> 
+<body> 
+<div class="container">
+<div class="card">
+  <div class="card-body">
+<div class="bg" id="bg"></div>
+                <div class="content text-center text-muted">
+                    <br><br>
+                    <h1><i class="fa fa-vcard-o" style="font-size:36px"></i></h1>
+                      <p>正在给{{oauth_id}}授权</p>
+                  <hr><br>
+                    <div class="form-group">
+                       <i class="fa fa-user-circle-o"></i>
+                      <input id="email" type="text" name="userName" required="" data-msg="" placeholder="" style="
+ border-color: #666666;
+ border:0;
+ outline:none;
+ border-style: solid;
+ border-top-width: 0px;
+ border-right-width: 0px;
+ border-bottom-width: 1px;
+ border-left-width: 0px
+">
+                    </div>
+                    <div class="form-group">
+                      <i class="fa fa-lock"></i>
+                      <input id="login_pwd" type="password" name="passWord" required="" style="
+ border-color: #666666;
+ border:0;
+ outline:none;
+ border-style: solid;
+ border-top-width: 0px;
+ border-right-width: 0px;
+ border-bottom-width: 1px;
+ border-left-width: 0px
+">
+                    </div>
+                    <div id="button_info">
+                      <button id="login" type="submit" class="btn btn-primary bt-sm" onclick="login_in_app()">
+                          授权
+                       </button>
+                    </div>
+                    <br><br>
+                    <div id="index_login_info"></div>
+                    <br><br>
+                </div>
+ </div> </div> </div>
+<script>
+//fweb.cc 2020-3-18 1228822
+var DEFAULT_VERSION = "9.0";
+var ua = navigator.userAgent.toLowerCase();
+var isIE = ua.indexOf("msie") > -1;
+var safariVersion;
+if (isIE) {
+    safariVersion = ua.match(/msie ([\d.]+)/)[1];   //获取浏览器版本号
+}
+if (safariVersion*1 <= DEFAULT_VERSION*1) {   //若版本号低于IE9，则跳转到如下页面
+    window.location.href = "/browser";    //提示页面（修改路径）
+}
+
+var login_info='<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:24px;"></i> <span class="sr-only">Loading...</span>'
+
+//登录
+		 function login_in_app(){
+     $('#index_login_info').html(login_info+'正在登录请稍后...')
+                      var email = $("#email").val();
+                      var passwd = $("#login_pwd").val();	
+                      if(email.length !=0 && passwd.length!=0 ){
+		 	          //向服务器写入toke
+                      js_object = {{url_add|safe }}
+                      $.ajax({url:'/token',
+                      data:{"email":md5(email),"passwd":md5(passwd),"mode":"oauth","code":js_object.code,"ID":js_object.ID,"state":js_object.state},
+                      cache:false,
+                      async: false,
+                      success : function(result){ 
+                                if(result.info != 'n'){
+                                      setCookie('email', email)
+                                      setCookie('toke', md5(passwd))                           
+                                      self.location=js_object.url;
+                                 }else{
+                                      info_cmd('danger',result.val,'index_login_info') 
+                                      $("#button_info").html(butt_dir)
+                                }  	
+                      }
+               });	  
+		 	  }else{
+              info_cmd('danger','填写用户名密码','index_login_info')
+              $("#button_info").html(butt_dir)
+      }
+		 	}
+
+//信息提示页面
+function info_cmd(p,q,z){
+         $("#"+z).show();
+         info='<div class="alert alert-'+p+'"><strong>'+q+'</strong></div>'
+         $('#'+z).html(info)
+         setTimeout('$("#'+z+'").hide()',3000);
+         }
+//写cookies
+function setCookie(name, value) {
+                var Days = 1;
+                var exp = new Date();
+                exp.setTime(exp.getTime() +  60 * 60 * 1000);
+                document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+            }
+
+
+</script>
+</html>

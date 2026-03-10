@@ -1,0 +1,154 @@
+    @media (max-width: 600px) {
+        .DivClass {
+            width: 100%; /* 当屏幕宽度小于等于500px时，将div宽度设为100% */
+        }
+    }
+    
+    @media (min-width: 601px) {
+        .DivClass {
+            width: 500px; /* 当屏幕宽度大于500px时，将div宽度设为60% */
+        }
+    }
+.bgdiv{ 
+    height:100%;
+    position: relative;
+    background: inherit;
+    padding:0px;
+    box-sizing:border-box;
+    z-index:1;
+}
+.bgdiv::after{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0px;
+    top:0;
+    background: inherit;
+    filter: blur(20px);
+    z-index: 2;
+
+}
+a, a:visited, a:link, a:hover{
+	color:#000; !important;text-decoration: none;
+}
+.row div {
+padding-left: 0px; // 去掉默认的左padding
+padding-right: 10px;
+}
+.hezi {
+width: 100%;
+//background-color: green;
+}
+a:focus {
+    outline: none;
+}
+
+
+.circle-div {
+  width: 80px; /* 或者你想要的任何尺寸 */
+  height: 80px; /* 宽度和高度相同 */
+  border-radius: 50%; /* 圆形 */
+   /* 背景颜色background-color: #3498db; */
+background-color:#ccc;
+
+  display: flex;
+  align-items: center; /* 使内容垂直居中 */
+  justify-content: center; /* 使内容水平居中 */
+  overflow: hidden; /* 确保内容不会溢出 */
+  margin-right: 15px;
+}
+
+.sector {
+    height: 80px;
+    width: 80px;
+       border: 5px solid transparent;
+    border-radius: 50%;
+    border-top-color: rgba(0, 0, 0, 0.3);
+    border-left-color: rgba(0, 0, 0, 0.3);
+    border-right-color: rgba(0, 0, 0, 0.3);
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+    transform:rotate(45deg);       
+       position: absolute;
+    pointer-events: none;
+/* 50*(0% 0%, 0% 100%, 100% 100%, 50% 50%)/
+/* 100*(0% 0%, 0% 100%, 100% 100%, 0% 50%)/
+clip-path: polygon(0% 50%, 0% 0%, 100% 0%, 0% 0%);
+}
+/* 容器美化 =====================================*/
+.container2 {
+    max-width: 650px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    padding: 32px;
+}
+
+/* 进度条：从圆点改为胶囊形指示器 */
+.modal-steps {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.step {
+    width: 35px; height: 6px;
+    background: #eee;
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.step.current { background: #007AFF; width: 60px; } /* 活跃状态拉长 */
+.step.completed { background: #34C759; }
+
+/* 选项卡片 (Grid 布局代替 Row) */
+#N_type, #N_groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+/* 卡片基础样式 */
+.my-div {
+    border: 2px solid #f5f5f7;
+    background: #f5f5f7;
+    border-radius: 20px;
+    padding: 24px 12px !important;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+.my-div:hover { transform: translateY(-4px); background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+
+/* 核心：选中状态（告别生硬的背景色） */
+.my-div.active {
+    border-color: #007AFF;
+    background: #f0f7ff !important;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.15);
+}
+.my-div.active i { color: #007AFF; }
+.my-div i { font-size: 40px !important; margin-bottom: 12px; display: block; color: #8e8e93; }
+.my-div p { margin: 0; font-size: 14px; font-weight: 500; color: #1d1d1f; }
+
+/* 自定义输入框 */
+input[type="text"] {
+    border: 1.5px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: all 0.2s;
+    outline: none;
+    width: 100%;
+}
+input[type="text"]:focus { border-color: #007AFF; background: #fff; }
+
+/* 底部操作栏 */
+.step-controlbar {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f2f2f7;
+}
+.btn { border-radius: 12px; padding: 12px 24px; font-weight: 600; }
+.btn-light { background: #f2f2f7; border: none; }
+.btn-success { background: #34C759; border: none; }
+/* 配置UI */
+

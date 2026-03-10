@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FWEB.CC</title>
+  <link rel="Shortcut Icon" href="../static/img/favicon.ico" type="image/x-icon" /> 
+<meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.0, user-scalable=yes"/>
+<meta name="keywords" content="vip" />
+  <script type="text/javascript" src="../static/js/jquery-3.7.1.min.js"></script> 
+
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/base64.js"></script>
+  <script src="../static/js/md5.js"></script>
+
+
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css"/> 
+  <link rel="stylesheet" href="../static/css/loadingbar.css"/> 
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+  
+  <link rel="stylesheet" href="../static/css/summernote-bs4.css">  
+  <script type="text/javascript" src="../static/js/summernote-bs4.js"></script>
+  </head>
+  <body>
+  <div class="modal" id="myModal" style="backdrop-filter: blur(10px);"> 
+   <div class="modal-dialog modal-lg"> 
+    <div class="modal-content"> 
+<div>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div> 
+     <div class="modal-body"> 
+      <div id="mpage"></div> 
+      <div id="history_list_page"></div> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+<div class="container">
+  <div id="dbinfo"></div>
+  <div id="Tpage"></div> 
+
+	  <div class="card-body">
+                              
+<div class="container">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home"><i class="fa fa-search"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1" onclick = "database()"><i class="fa fa-database"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu3" onclick = "exit()"><i class="fa fa-sign-out"></i></a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+	    <div class="row">
+			<div class="col-sm-6">
+	               <h2><a href="javascript:void(0);" onclick = "Tlist('0','0');" ><i class="fa fa-user"></i></a>搜索</h2>
+				   
+			</div> 
+   <div class="col-sm-6">
+				<div class="float-md-right mx-auto">
+				         <div class="input-group mb-3">
+				             <select id="tble_search" class="form-control" onchange="gradeChange()"></select>						 
+				             <select id="type_search" class="form-control"></select>
+                 <input type="text" id="Server_search" class="form-control" pplaceholder="关键字">
+                 <div class="input-group-append">
+                 <span class="input-group-text"><a href="javascript:void(0);" onclick = "search_go('0','0')" ><i class="fa fa-search"></i></a></span>
+              </div>
+     </div>     
+		  </div> 
+        </div><hr> 
+	</div> 				
+    <div id="list"></div>	
+ </div>
+    <div id="confing" class="container tab-pane fade"><br>
+      <div id="confing_list"></div>
+      <div id="confing_info"></div>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <div id="dblist"></div>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+       <div id="mulist"></div>
+    </div>
+    <div id="menu3" class="container tab-pane fade"><br>
+      ...
+    </div>
+  </div>
+</div>
+
+   </div>
+  <div id="confing_info2"></div>    
+   </body>
+  <script src="../static/js/device.js"></script>  
+    <script src="../static/js/index.js"></script> 
+    <script src="../static/js/admin.js"></script>
+
+</html>

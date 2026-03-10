@@ -1,0 +1,537 @@
+{
+  "menu": [
+    {
+      "mode": "home",
+      "ioc": "<i class='fa fa-dashboard'></i>",
+      "onclick": "plist",
+      "js": "devices_list.js",
+      "title": "控制面板"
+    },
+    {
+      "mode": "time",
+      "ioc": "<i class='fa fa-clock-o'></i>",
+      "onclick": "times_list",
+      "js": "time_task.js",
+      "title": "定时功能"
+    },
+    {
+      "mode": "auto",
+      "ioc": "<i class='fa fa-street-view'></i>",
+      "onclick": "auto_list",
+      "js": "auto_task.js",
+      "title": "自动化"
+    },
+    {
+      "mode": "cmd",
+      "ioc": "<i class='fa fa-terminal'></i>",
+      "onclick": "",
+      "js": "",
+      "title": "命令"
+    },
+    {
+      "mode": "config",
+      "ioc": "<i class='fa fa-cog'></i>",
+      "onclick": "config_get",
+      "js": "config_task.js",
+      "title": "配置"
+    },
+    {
+      "mode": "history",
+      "ioc": "<i class='fa fa-history'></i>",
+      "onclick": "history",
+      "js": "history.js",
+      "title": "历史"
+    },
+    {
+      "mode": "localmap",
+      "ioc": "<i class='fa fa-map-marker'></i>",
+      "onclick": "map_get",
+      "js": "localmap.js",
+      "title": "地图"
+    },
+    {
+      "mode": "about",
+      "ioc": "<i class='fa fa-user-circle-o'></i>",
+      "onclick": "about_get",
+      "js": "about.js",
+      "title": "关于"
+    }
+  ],
+  "timemode": [
+    {
+      "mode": "interval",
+      "title": "循环"
+    },
+    {
+      "mode": "sun",
+      "title": "日出日落"
+    },
+    {
+      "mode": "cron",
+      "title": "定时"
+    }
+  ],
+  "automode2": [
+    {
+      "mode": "vals",
+      "title": "值对比",
+      "val": [
+        {
+          "mod": "g",
+          "title": "大于",
+          "val": "0",
+          "unt": "[数字]"
+        },
+        {
+          "mod": "l",
+          "title": "小于",
+          "val": "0",
+          "unt": "[数字]"
+        },
+        {
+          "mod": "e",
+          "title": "等于",
+          "val": "0",
+          "unt": "[数字]"
+        }
+      ]
+    }
+  ],
+  "automode": [
+    {
+      "mode": "times",
+      "title": "时间",
+      "val": [
+        {
+          "mod": "d",
+          "title": "延迟",
+          "val": "0",
+          "cmd": "T_ADDTIME",
+          "unt": "[秒]"
+        },
+        {
+          "mod": "r",
+          "title": "范围内",
+          "val": "17:00-21:00|0",
+          "cmd": "T_ADDTIME",
+          "unt": "[|延时,秒]"
+        },
+        {
+          "mod": "w",
+          "title": "范围外",
+          "val": "17:00-21:00|0",
+          "cmd": "T_ADDTIME",
+          "unt": "[|延时,秒]"
+        }
+      ]
+    },
+    {
+      "mode": "local",
+      "title": "定位",
+      "val": [
+        {
+          "mod": "g",
+          "title": "范围外",
+          "val": "10",
+          "cmd": "L_DWE_MOD",
+          "unt": "[米]"
+        },
+        {
+          "mod": "l",
+          "title": "范围内",
+          "val": "10",
+          "cmd": "L_DWE_MOD",
+          "unt": "[米]"
+        }
+      ]
+    },
+    {
+      "mode": "vals",
+      "title": "值对比",
+      "val": [
+        {
+          "mod": "g",
+          "title": "大于",
+          "val": "0",
+          "cmd": "V_VAL_AUTO",
+          "unt": "[数字]"
+        },
+        {
+          "mod": "l",
+          "title": "小于",
+          "val": "0",
+          "cmd": "V_VAL_AUTO",
+          "unt": "[数字]"
+        },
+        {
+          "mod": "e",
+          "title": "等于",
+          "val": "0",
+          "cmd": "V_VAL_AUTO",
+          "unt": "[数字]"
+        }
+      ]
+    }
+  ],
+  "about": {
+    "<a href='/admin' target='_blank' class='text-white'><i class='fa fa-database' style='font-size:24px;'></i>": "数据库管理</a>",
+    "<a href='http://fweb.cc/?m=doc&i=62&p=0' target='_blank' class='text-white'><i class='fa fa-book' style='font-size:24px;'></i>": "使用手册</a>"
+  },
+  "addir": {
+    "cmdon": "<i class='fa fa-power-off'></i>",
+    "cmdoff": "<i class='fa fa-power-off' ></i>",
+    "cmdon_Bottom": "<i class='fa fa-arrow-circle-down'></i>",
+    "cmdon_Top": "<i class='fa fa-arrow-circle-up' ></i>",
+    "cmdon_Left": "<i class='fa fa-arrow-circle-left'></i>",
+    "cmdon_Right": "<i class='fa fa-arrow-circle-right'></i>",
+    "cmdon_home": "<i class='fa fa-sign-out'></i>",
+    "cmdon_repeat": "<i class='fa fa-repeat' ></i>",
+    "cmdon_circle": "<i class='fa fa-play-circle' ></i>",
+    "cmdon_navicon": "<i class='fa fa-navicon' ></i>",
+    "cmdon_plus": "<i class='fa fa-plus' ></i>",
+    "cmdon_minus": "<i class='fa fa-minus'></i>"
+  },
+  "unit": [
+    {
+      "unit": "none",
+      "ioc": "none",
+      "reduced": "none"
+    },
+    {
+      "unit": "A",
+      "ioc": "fa-bolt",
+      "reduced": {
+        "DC": "0|20",
+        "AC": "0|20"
+      }
+    },
+    {
+      "unit": "V",
+      "ioc": "fa-bolt",
+      "reduced": {
+        "DC": "0|20",
+        "AC": "0|240"
+      }
+    },
+    {
+      "unit": "W",
+      "ioc": "fa-bolt",
+      "reduced": {
+        "DC": "0|200",
+        "AC": "0|1500"
+      }
+    },
+    {
+      "unit": "KW",
+      "ioc": "fa-bolt",
+      "reduced": "none"
+    },
+    {
+      "unit": "°C",
+      "ioc": "fa-thermometer-1",
+      "reduced": {
+        "SH": "-20|45",
+        "GY": "0|85"
+      }
+    },
+    {
+      "unit": "g",
+      "ioc": "fa-user",
+      "reduced": "none"
+    },
+    {
+      "unit": "KG",
+      "ioc": "fa-user",
+      "reduced": "none"
+    },
+    {
+      "unit": "m",
+      "ioc": "fa-user",
+      "reduced": "none"
+    },
+    {
+      "unit": "km",
+      "ioc": "fa-user",
+      "reduced": "none"
+    },
+    {
+      "unit": "%",
+      "ioc": "fa-tint",
+      "reduced": "none"
+    },
+    {
+      "unit": "L",
+      "ioc": "fa-tint",
+      "reduced": {
+        "SH": "1|20000",
+        "GY": "0|5000"
+      }
+    },
+    {
+      "unit": "Dimmer",
+      "ioc": "fa-user",
+      "reduced": "none"
+    }
+  ],
+  "addinput": {
+    "Publish": {"title":"发送主题","mode":"input"},
+    "key1": {"title":"JSON键值['demo']","mode":"input"},
+    "stat": {"title":"状态","mode":"input"},
+    "timing": {"title":"是否记录历史","mode":"selec"},
+    "unit": {"title":"单位","mode":"selec"},
+    "button_up": {"title":"页面上按钮","mode":"selec"},
+    "button_down": {"title":"页面下按钮","mode":"selec"},
+    "Subscribe": {"title":"订阅主题","mode":"input"},
+    "cmdoff": {"title":"命令[off]<i class='fa fa-power-off'></i>","mode":"input"},
+    "JSON": {"title":"JSON数据","mode":"input"},
+    "title": {"title":"中文名称[*]","mode":"input"},
+    "email": {"title":"是否邮件通知","mode":"selec"},
+    "cmdon": {"title":"命令[on]<i class='fa fa-power-off'></i>","mode":"input"},
+    "name": {"title":"英文名[*]","mode":"input"},
+    "groups": {"title":"位置","mode":"selec"},
+    "mode": {"title":"类型","mode":"selec"},
+    "ip": {"title":"IP地址","mode":"input"}
+  },
+  "type": [
+    {
+      "title": "按钮",
+      "val": "switch",
+      "ioc": "fa-toggle-VALUE",
+      "data": "",
+      "stat": "y"
+    },
+    {
+      "title": "灯",
+      "val": "light",
+      "ioc": "fa-lightbulb-o",
+      "data": "",
+      "stat": "y"
+    },
+    {
+      "title": "进度条",
+      "val": "Dimmer",
+      "ioc": "",
+      "data": "",
+      "stat": "y"
+    },
+    {
+      "title": "数值",
+      "val": "number",
+      "data": "",
+      "stat": "y"
+    },
+    {
+      "title": "快捷",
+      "val": "iframe",
+      "ioc": "",
+      "data": "",
+      "stat": "n"
+    },
+    {
+      "title": "监控",
+      "val": "camera",
+      "ioc": "fa-camera",
+      "data": "",
+      "stat": "Publish"
+    },
+    {
+      "title": "遥控",
+      "val": "ir",
+      "data": "",
+      "stat": "n"
+    },
+    {
+      "title": "地图",
+      "val": "map",
+      "ioc": "fa-map-marker",
+      "data": "",
+      "stat": "y"
+    },
+    {
+      "title": "天气",
+      "val": "warther",
+      "ioc": "fa-cloud",
+      "data": "",
+      "stat": "Publish"
+    },
+    {
+      "title": "卡片",
+      "val": "card",
+      "ioc": "fa-address-card-o",
+      "data": "",
+      "stat": "Publish"
+    }
+  ],
+  "type_ADD": {
+    "switch": [
+      {
+        "title": "锁",
+        "val": "lock"
+      },
+      {
+        "title": "开关",
+        "val": "switch"
+      }
+    ],
+    "lock": [
+      {
+        "title": "锁",
+        "val": "lock"
+      }
+    ],
+    "light": [
+      {
+        "title": "灯",
+        "val": "light"
+      }
+    ],
+    "camera": [
+      {
+        "title": "监控",
+        "val": "camera"
+      }
+    ],
+    "ir": [
+      {
+        "title": "遥控",
+        "val": "ir"
+      }
+    ],
+    "iframe": [
+      {
+        "title": "快捷",
+        "val": "iframe"
+      }
+    ],
+    "warther": [
+      {
+        "title": "天气",
+        "val": "warther"
+      }
+    ],
+    "number": [
+      {
+        "title": "传感器",
+        "val": "sensor"
+      }
+    ],
+    "map": [
+      {
+        "title": "地图",
+        "val": "localmap"
+      }
+    ],
+    "card": [
+      {
+        "title": "卡片",
+        "val": "card"
+      }
+    ],
+    "card2": [
+      {
+        "title": "卡片2",
+        "val": "card2"
+      }
+    ]
+  },
+  "BUTTON": [
+    {
+      "title": "历史记录",
+      "val": "HOSTOR_P",
+      "mod": "up",
+      "data": [
+        "switch",
+        "light",
+        "sensor",
+        "lock",
+        "localmap",
+        "ir"
+      ]
+    },
+    {
+      "title": "弹出页",
+      "val": "CARD_P",
+      "mod": "up",
+      "data": [
+        "card",
+        "card2",
+        "warther",
+        "camera"
+      ]
+    },
+    {
+      "title": "空",
+      "val": "BUTTON2",
+      "mod": "down",
+      "data": [
+        "iframe",
+        "card",
+        "camera",
+        "card2",
+        "warther",
+        "localmap"
+      ]
+    },
+    {
+      "title": "进度条",
+      "val": "BUTTON1",
+      "mod": "down",
+      "data": [
+        "switch",
+        "light"
+      ]
+    },
+    {
+      "title": "弹出页",
+      "val": "BUTTON3",
+      "mod": "down",
+      "data": [
+        "iframe",
+        "card",
+        "camera",
+        "card2",
+        "warther",
+        "localmap",
+        "ir"
+      ]
+    },
+    {
+      "title": "显示数值",
+      "val": "BUTTON4",
+      "mod": "down",
+      "data": [
+        "sensor"
+      ]
+    },
+    {
+      "title": "开关图标",
+      "val": "BUTTON5",
+      "mod": "down",
+      "data": [
+        "switch",
+        "light",
+        "lock"
+      ]
+    },
+    {
+      "title": "灯光图标",
+      "val": "BUTTON6",
+      "mod": "down",
+      "data": [
+        "light"
+      ]
+    }
+  ],
+  "BUTTONP": {
+    "PSTAT": "Pstat('idx','mode','title','Publish','Subscribe','VALUE','serial','unit','DOWN')",
+    "HOSTOR_P": "GET_HOSTOR_ONE('idx','mode','title','Publish','Subscribe','VALUE','serial','unit','DOWN')",
+    "CARD_P": "Popup('idx','mode','title','Publish','Subscribe','VALUE','serial','unit','DOWN')",
+    "GPAGE": "get_pages('idx','mode','title','Publish','Subscribe','VALUE','serial','unit','DOWN')",
+    "BUTTON1": "<input type='range' id='L_idx' style='width: 100%;max-width: 100%;' value='VALUE' min='0' max='100' onchange=\"Publish\">",
+    "BUTTON2": "",
+    "BUTTON3": "<a href='javascript:void(0);' style='color:inherit;' data-toggle='modal' data-target='#myModal' onclick =\"Publish\"><i class='fa fa-history'></i></a>",
+    "BUTTON4": "<a href='javascript:void(0);' style='color:inherit;' data-toggle='modal' data-target='#myModal' onclick =\"Publish\"><div style='display: flex; align-items: baseline;'><span style='font-size: 20px; font-weight: 800; color: #1d1d1f; line-height: 1; letter-spacing: -0.5px;'>VALUE<span style='font-size: 10px; color: #007aff; font-weight: 600; margin-left: 2px;'>unit</span></span></div></a>",
+    "BUTTON5": "<a href='javascript:void(0);' style='color:inherit;' onclick=\"Publish\"><i class='fa fa-toggle-VALUE' style='font-size:28px;color:mode'></i></a>",
+    "BUTTON6": "<a href='javascript:void(0);' style='color:inherit;' onclick=\"Publish\"><i class='fa fa-lightbulb-o' style='font-size:28px;color:mode'></i></a>"
+  }
+}

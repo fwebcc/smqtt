@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+    .path {
+      fill: none;
+      stroke: #ff7f50;
+      stroke-width: 3;
+      stroke-dasharray: 1000; /* 设置路径的总长度 */
+      stroke-dashoffset: 1000; /* 初始偏移量，隐藏路径 */
+     animation:dash 10s linear infinite;
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg viewBox="0 0 80 40">
+    <path class="path" d="M0 0 L20 40 L40 0 L60 40  L80 0"/>
+  </svg>
+</body>
+</html>

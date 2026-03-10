@@ -1,0 +1,218 @@
+{
+    "mqtt": {
+        "url": "broker.hivemq.com",
+        "path": "/mqtt",
+        "port": "10001",
+        "user": "loog",
+        "pass": "133133",
+        "tls": false,
+        "id": 2,
+        "topic": "#",
+        "mtport": "1883",
+        "qos": 2,
+        "cleansession": true,
+        "reconnectTimeout": 3000
+    },
+    "key": {
+        "user": "21232f297a57a5a743894a0e4a801fc3",
+        "pass": "1a1dc91c907325c69271ddf0c944bc72",
+        "uuid": [
+            {
+                "RecordIP": "n",
+                "browser": "iPhone_12mini",
+                "id": "88dad121d5348f1c9078d568aee5f48f",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "iPhone_16pro",
+                "id": "0585ad5fd498deac183adb0c3062c258",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "iPhone_16proyy",
+                "id": "8023a0cf2d6fe5abcb112c908075c4b3",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "Win_11",
+                "id": "6ba15d89a3071af0b50758e66819e8d6",
+                "topic": "loog"
+            },
+            {
+                "RecordIP": "n",
+                "browser": "iPhone_16",
+                "id": "d4423606223dfb8ea5b53d0fef427f7b",
+                "topic": "loog"
+            }
+        ]
+    },
+    "tmall_types": [
+        "light",
+        "switch",
+        "outlet",
+        "fan",
+        "camera",
+        "STB"
+    ],
+    "conf": {
+        "BaiduAK": {
+            "v": "oHiNDQsymR2QgS3YKAtDm6DIe2tzD8MK",
+            "t": "\u767e\u5ea6\u5730\u56feAK",
+            "mod": "input",
+            "data": ""
+        },
+        "ETC": {
+            "v": "Asia/Shanghai",
+            "t": "\u65f6\u533a",
+            "mod": "input",
+            "data": ""
+        },
+        "Every": {
+            "v": "10",
+            "t": "\u6bcf\u9875\u663e\u793a\u6761",
+            "mod": "input",
+            "data": ""
+        },
+        "GaodeAK": {
+            "v": "233ab8e008ec710d9b0bb5af4f4220a2",
+            "t": "\u9ad8\u5fb7AK",
+            "mod": "input",
+            "data": ""
+        },
+        "Refresh": {
+            "v": "y",
+            "t": "\u6253\u5f00\u5237\u65b0\u9875\u9762",
+            "mod": "checkbox",
+            "data": ""
+        },
+        "SELMAP": {
+            "v": "amap",
+            "t": "\u5730\u56fe\u9009\u62e9",
+            "mod": "select",
+            "data": "[{\"select\": \"baidu\",\"t\":\"\u767e\u5ea6\u5730\u56fe\"},{\"select\": \"amap\",\"t\":\"\u9ad8\u5fb7\u5730\u56fe\"}]"
+        },
+        "city": {
+            "v": "shaoxing",
+            "t": "\u57ce\u5e02",
+            "mod": "input",
+            "data": ""
+        },
+        "country": {
+            "v": "China",
+            "t": "\u56fd\u5bb6",
+            "mod": "input",
+            "data": ""
+        },
+        "debug": {
+            "v": "n",
+            "t": "\u8c03\u8bd5\u6a21\u5f0f",
+            "mod": "checkbox",
+            "data": ""
+        },
+        "email": {
+            "v": "1228822@qq.com",
+            "t": "\u8ba2\u9605\u90ae\u7bb1",
+            "mod": "input",
+            "data": ""
+        },
+        "email_Title": {
+            "v": "SMQTT\u8bbe\u5907\u901a\u77e5",
+            "t": "\u90ae\u4ef6\u4e3b\u9898",
+            "mod": "input",
+            "data": ""
+        },
+        "from_email": {
+            "v": "1228822@qq.com",
+            "t": "\u53d1\u4ef6\u4eba\u90ae\u7bb1",
+            "mod": "input",
+            "data": ""
+        },
+        "from_smtp": {
+            "v": "smtp.qq.com",
+            "t": "SMTP\u670d\u52a1\u5668",
+            "mod": "input",
+            "data": ""
+        },
+        "from_toke": {
+            "v": "zutfnikguzsobifd",
+            "t": "\u53d1\u4ef6\u7bb1TOKE",
+            "mod": "input",
+            "data": ""
+        },
+        "homekit": {
+            "v": "y",
+            "t": "homekit",
+            "mod": "checkbox",
+            "data": ""
+        },
+        "homekit_port": {
+            "v": "51826",
+            "t": "homekit\u7aef\u53e3",
+            "mod": "input",
+            "data": ""
+        },
+        "https": {
+            "v": "n",
+            "t": "HTTPS\u6a21\u5f0f",
+            "mod": "checkbox",
+            "data": ""
+        },
+        "https_crt": {
+            "v": "fullchain.cer",
+            "t": "https_crt",
+            "mod": "input",
+            "data": ""
+        },
+        "https_key": {
+            "v": "h.fweb.cc.key",
+            "t": "https_key",
+            "mod": "input",
+            "data": ""
+        },
+        "latitude": {
+            "v": "29.993055836873836",
+            "t": "\u7eac\u5ea6",
+            "mod": "input",
+            "data": ""
+        },
+        "longitude": {
+            "v": "120.61361066382652",
+            "t": "\u7ecf\u5ea6",
+            "mod": "input",
+            "data": ""
+        },
+        "pass": {
+            "v": "16241923",
+            "t": "KEY",
+            "mod": "input",
+            "data": ""
+        },
+        "port": {
+            "v": "8123",
+            "t": "WEB\u7aef\u53e3",
+            "mod": "input",
+            "data": ""
+        },
+        "send_email": {
+            "v": "20720879@qq.com",
+            "t": "\u6536\u4ef6\u4eba\u90ae\u7bb1",
+            "mod": "input",
+            "data": ""
+        },
+        "server": {
+            "v": "http://fweb.cc",
+            "t": "\u670d\u52a1\u5668\u5730\u5740",
+            "mod": "input",
+            "data": ""
+        },
+        "user_id": {
+            "v": "7477",
+            "t": "Token",
+            "mod": "input",
+            "data": ""
+        }
+    }
+}

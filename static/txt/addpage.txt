@@ -1,0 +1,64 @@
+
+<div class="container2 p-3">
+	<div class="form-group  border-bottom-1">
+		<div class="modal-steps ">
+			<div class="step">
+				<div class="dot"></div>
+				
+			</div>
+			<div class="step">
+				<div class="dot"></div>
+
+			</div>
+		
+			<div class="step">
+				<div class="dot"></div>
+			</div>
+			<div class="step">
+				<div class="dot"></div>
+			</div>
+		</div>
+	</div>
+<input type="hidden" id="A_current" value="" >
+<input type="hidden" id="A_mode" value="" >
+<input type="hidden" id="A_groups" value="" >
+	<div class="form-group"><div id="add_info"></div>
+		<div class="step-main">
+			<div class="step-slide">
+				选择设备类型
+                               
+                                <div style="overflow-x: hidden;overflow-y: auto;width:100%;height:500px;margin: 0;"><div id="N_type" class="row"></div></div>
+			</div>
+			<div class="step-slide">
+				选择位置<p id="I_mode"></p>
+                                
+                                <div style="overflow-x: hidden;overflow-y: auto;width:100%;height:500px;margin: 0;"><div id="N_groups" class="row"></div></div>
+
+			</div>
+			<div class="step-slide">
+				设置中英文名称<p id="I_groups"></p>
+<p></p>
+                                <div class="d-flex flex-row"><div class="col-sm-6 text-right">英文名称:</div><div class="col-sm-6 text-left"><input type="text" id="A_name" value="" onKeyUp="value=value.replace(/[\W]/g,'')"/></div></div>
+                                <div class="d-flex flex-row"><div class="col-sm-6 text-right">显示名称:</div><div class="col-sm-6 text-left"><input type="text" id="A_title" value=""></div></div>
+                                            <div id="N_name"></div>
+
+			</div>
+			<div class="step-slide">
+				订阅设置
+<p></p>
+<div id="N_input" style="width:100%;height:600px;"></div>
+
+                                            <div id="N_othe"></div>
+
+			</div>
+		</div>
+	</div>
+	<div class="form-group ">
+		<div class="step-controlbar col-sm-12 d-flex justify-content-between">
+			<button type="button" class="btn btn-light unVisible" id="pre">上一步</button>
+			  <button type="button" class="btn btn-light" id="next">下一步</button>
+		</div>
+	</div>
+</div>
+<script src="../static/js/jquery.actual.min.js"></script> 
+<script src="../static/js/multistep.js"></script> 

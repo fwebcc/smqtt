@@ -1,0 +1,14 @@
+
+========================================
+[31m设备码: 67428510[0m
+
+========================================
+[2026-02-27 10:16:33] MQTT broker，准备连接...
+MQTT 订阅成功 code:Success
+定时任务启动成功！
+
+服务启动 | PID: 30471 | 时间: 2026-02-27 10:16:33
+
+ * Serving Flask app 'mqtt'
+ * Debug mode: off
+Invalid session lJWgJgHWqOZtFvcmAAAG (further occurrences of this error will be logged with level INFO)

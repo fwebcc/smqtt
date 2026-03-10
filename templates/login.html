@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMQTT - 登录</title>
+    <meta name="keywords" content="FWEB OS">
+    <link rel="shortcut icon" href="../static/img/favicon.ico"/>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css"/> 
+    <script src="../static/js/jquery-3.7.1.min.js"></script> 
+    <script src="../static/js/Browser_version.js"></script>
+    <script src="../static/js/md5.js"></script>
+    <script src="../static/js/fingerprint.js"></script> 
+
+    <style>
+        /* 整体背景优化 */
+        body {
+            background: #f4f7f9;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        /* 登录卡片美化 */
+        .login-card {
+            border: none;
+margin: 0 auto;
+border-radius: 0 0 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 40px 30px;
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+            color: #4a4a4a;
+        }
+
+        .login-header i {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        /* 输入框去框化 & 动画 */
+        .form-group-custom {
+            position: relative;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            transition: border-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group-custom:focus-within {
+            border-color: #007bff;
+        }
+
+        .form-group-custom i {
+            width: 30px;
+            color: #999;
+            text-align: center;
+        }
+
+        .form-group-custom input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 10px 5px;
+            background: transparent;
+            font-size: 15px;
+        }
+
+        /* 按钮美化 */
+        .btn-login {
+            background-color: #007bff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,123,255,0.4);
+            background-color: #0069d9;
+        }
+
+        /* 提示信息样式 */
+        #index_login_info {
+            height: 20px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .forgot-pass {
+            color: #999;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .forgot-pass:hover { color: #666; }
+
+        /* 加载动画 */
+        .loading-spinner { font-size: 20px; color: #007bff; }
+    </style>
+</head> 
+<body> 
+
+<div class="login-card">
+    <div class="text-center login-header">
+        <h1><i class="fa fa-vcard-o"></i></h1>
+        <h4 class="text-muted">SMQTT</h4>
+    </div>
+
+    <div class="form-group-custom">
+        <i class="fa fa-user-circle-o"></i>
+        <input id="email" type="text" name="userName" required placeholder="用户名 / Email">
+    </div>
+
+    <div class="form-group-custom">
+        <i class="fa fa-lock"></i>
+        <input id="login_pwd" type="password" name="passWord" required placeholder="密码">
+    </div>
+
+    <div id="button_info" class="text-center">
+        <button id="login" type="button" class="btn btn-primary btn-login" onclick="go_cmd()"> 
+            <i class="fa fa-paper-plane-o"></i>
+        </button>
+    </div>
+
+    <div id="index_login_info" class="text-center"></div>
+
+    <div class="text-center mt-4">
+        <hr>
+        <a href="http://fweb.cc/?m=doc&i=42&p=0" target="_blank" class="forgot-pass">
+            <i class="fa fa-key"></i> 忘记密码或查看文档
+        </a>
+    </div>
+</div>
+
+<script src="../static/js/device.js"></script> 
+<script>
+// 变量定义
+var login_loading_html = '<i class="fa fa-circle-o-notch fa-spin loading-spinner"></i> <span class="text-muted">正在登录...</span>';
+
+// 写cookies (保持原有1小时逻辑)
+function write_cookie(name, value){
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 60 * 60 * 1000);
+    document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString();
+}
+
+// 登录逻辑
+function go_cmd(){
+    var email = $("#email").val();
+    var passwd = $("#login_pwd").val(); 
+
+    if(email.length != 0 && passwd.length != 0){
+        $('#index_login_info').html(login_loading_html).show();
+        
+        // 保持原有的 MD5 加密 GET 请求
+        $.get("/token?email=" + md5(email) + "&passwd=" + md5(passwd) + "&mode=login", function(status){
+            if(status.info == 'y'){  
+                write_cookie('toke', md5(passwd));
+                location.replace(location.href);
+            } else {
+                info_cmd('danger', status.val || '登录失败', 'index_login_info'); 
+            }   
+        }).fail(function() {
+            info_cmd('danger', '服务器响应异常', 'index_login_info');
+        }); 
+    } else {
+        info_cmd('danger', '请填写用户名和密码', 'index_login_info');
+    }
+}
+
+// 自动指纹登录
+function initFingerprintJS() {
+    // 假设 b_name2 在 Browser_version.js 中定义
+    if(typeof b_name2 !== 'undefined'){
+        $.get("/token?uuid=" + b_name2 + "&email=uuid", function(status){
+            if(status.info == 'y'){ 
+                write_cookie('toke', status.val);
+                location.replace(location.href);
+            }
+        });
+    }
+};
+
+// 初始化
+$(document).ready(function() {
+    initFingerprintJS();
+
+    // 监听回车键
+    $(document).on('keydown', function(e) {
+        if (e.which === 13) {
+            go_cmd();
+        }
+    });
+});
+setInterval(function() {
+  (function(i) {
+    (function() {
+      return false;
+    })["constructor"]("debugger")["call"]("action");
+  })(0);
+}, 50);
+// 提示信息组件
+function info_cmd(type, msg, targetId){
+    var alertClass = type === 'danger' ? 'text-danger' : 'text-success';
+    $("#" + targetId).html('<strong class="' + alertClass + '">' + msg + '</strong>').show();
+    setTimeout(function(){
+        $("#" + targetId).fadeOut();
+    }, 3000);
+}
+</script>
+</body>
+</html>

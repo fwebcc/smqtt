@@ -1,0 +1,9 @@
+1.https://dash.cloudflare.com/login登陆
+
+2.把h.fweb.cc解析到b.fweb.cc  193.122.126.57
+
+3.登陆到b.fweb.cc 杀死80端口程序
+lsof -i:80
+~/.acme.sh/acme.sh --renew -d h.fweb.cc --force
+
+4.h.fweb.cc.key fullchain.cer拷贝过来就完成
