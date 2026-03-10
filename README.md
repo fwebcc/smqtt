@@ -2,67 +2,75 @@
 
 <img width="743" height="868" alt="2026-03-10 154735" src="https://github.com/user-attachments/assets/b3ce07ce-6b01-4e22-8fa8-b00b0cac20d4" />
 
-SMQTT - Mosquitto MQTT Web UI & Automation
-基于 Mosquitto 的 MQTT Web 管理后台与自动化触发系统
-🌟 项目简介 | Introduction
-SMQTT 是一款轻量级的 Mosquitto MQTT 可视化管理工具。它不仅提供了直观的 Web 操作界面，还集成了 SQLite 数据库记录、自动触发器及定时任务功能，旨在简化物联网（IoT）系统的管理与自动化。
+# SMQTT - Mosquitto MQTT Web Interface & Automation System
 
-SMQTT is a lightweight Web UI for Mosquitto MQTT management. It provides a visual dashboard, SQLite data logging, automatic triggers, and scheduling, designed to simplify IoT system management and automation.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.5+-green.svg)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/platform-Debian%20|%20Ubuntu-orange.svg)](https://www.debian.org/)
 
-🚀 在线演示 | Live Demo
-URL: http://g.fweb.cc:8123
+**SMQTT** 是一款为 Mosquitto 设计的轻量级可视化管理后台，集成了数据持久化、自动触发器和定时任务功能。
+**SMQTT** is a lightweight Web UI for Mosquitto MQTT, featuring SQLite logging, automated triggers, and task scheduling.
 
-Username: admin
+---
 
-Password: pass
+## 🚀 演示信息 | Live Demo
+* **演示地址 (URL)**: [http://g.fweb.cc:8123](http://g.fweb.cc:8123)
+* **默认账号 (User)**: `admin`
+* **默认密码 (Pass)**: `pass`
 
-✨ 核心特性 | Features
-Web UI: 轻松管理 MQTT 消息与主题。 / Intuitive dashboard for MQTT topics and messages.
+---
 
-Database: 使用 SQLite 记录历史数据。 / SQLite integration for data logging and history.
+## ✨ 核心功能 | Key Features
 
-Automation: 自动触发与定时功能。 / Automated triggers and scheduled task support.
+### 1. 可视化管理 (Web Dashboard)
+* **实时监控**：通过 Web 页面实时查看 MQTT 消息流动。
+* **双语支持**：界面简洁，支持中英文双语逻辑。
+* * HomeKit桥接**：支持HomeKit桥接。
+* **Real-time Monitoring**: Track MQTT messages directly via WebSockets.
 
-Security: 支持 HTTPS 证书配置。 / Easy HTTPS/SSL certificate configuration.
+### 2. 数据持久化 (SQLite Logging)
+* **历史回溯**：所有 MQTT 消息自动存入 SQLite 数据库，方便查阅历史记录。
+* **Data Logging**: All messages are stored in SQLite for historical analysis.
 
-🛠️ 快速安装 | Quick Start
-环境要求 | Platform: Debian / Ubuntu (x86)
+### 3. 自动化与定时 (Automation & Scheduler)
+* **自动触发**：支持基于消息内容的自动响应逻辑。
+* **定时任务**：内置 Cron 式定时功能，自动执行 MQTT 发布动作。
+* **Triggers & Scheduling**: Support for event-driven actions and cron-based tasks.
 
-安装依赖 | Install Dependencies:
+### 4. 安全增强 (Security)
+* **HTTPS 支持**：支持自定义 SSL 证书。
+* **HTTPS Ready**: Easy SSL certificate configuration for secure access.
 
-Bash
+---
+
+## 🛠️ 安装指南 | Installation
+
+### 环境要求 (Prerequisites)
+* **OS**: Debian / Ubuntu (x86 架构)
+* **Dependencies**: `jq`, `ffmpeg`
+
+### 部署步骤 (Steps)
+1.下源码
+```bash
+# 1. 安装系统依赖
 apt update && apt install jq ffmpeg -y
-克隆代码 | Clone Repository:
 
-Bash
-git clone https://github.com/fwebcc/smqtt.git
+# 2. 克隆仓库
+git clone [https://github.com/fwebcc/smqtt.git](https://github.com/fwebcc/smqtt.git)
 cd smqtt/app
-创建必要目录 | Initialize Directories:
 
-Bash
+# 3. 初始化必要目录
 mkdir pid live https
-启动程序 | Start Service:
 
-Bash
+# 4. 启动程序
 ./cmd start
-访问页面 | Access UI:
-http://YOUR_IP:8123 (Default: admin / pass)
-
-🔒 安全配置 | HTTPS
-如果需要启用 HTTPS，请将您的 .key 和 .crt 证书文件放入 https 目录，并在 Web 设置页面中勾选 HTTPS 选项。
-
-To enable HTTPS, place your .key and .crt files into the https folder and enable the "HTTPS" option in the system settings.
-
-📚 技术栈 | Tech Stack
-项目基于 Python 3.5, HTML, JS, WebSockets 构建，感谢以下开源项目：
-Developed with Python 3.5, utilizing these excellent libraries:
-
-HAP-python (HomeKit Support)
-
-Flask (Web Framework)
-
-Flask-APScheduler (Task Scheduling)
-
-Flask-SocketIO (Real-time Communication)
-
-Paho-MQTT (MQTT Client)
+```
+2.docker
+```bash
+docker run -d \
+  --name smqtt\
+  --privileged \
+  -p 1883:1883 -p 8123:8123 -p 51826:51826 \
+  --restart always \
+  crpi-14b1su7dluf9zqso.cn-hangzhou.personal.cr.aliyuncs.com/fwebcc/smqtt:v1.0
+```
