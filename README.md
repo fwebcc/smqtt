@@ -72,5 +72,5 @@ docker run -d \
   --privileged \
   -p 1883:1883 -p 8123:8123 -p 51826:51826 \
   --restart always \
-  crpi-14b1su7dluf9zqso.cn-hangzhou.personal.cr.aliyuncs.com/fwebcc/smqtt:v1.0
+  crpi-14b1su7dluf9zqso.cn-hangzhou.personal.cr.aliyuncs.com/fwebcc/smqtt:v1
 ```
